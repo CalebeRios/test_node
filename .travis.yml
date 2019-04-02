@@ -10,8 +10,9 @@ services:
 before_install:
 - docker build --rm -t wendyclima .
 - docker run --rm -it -p 3000:3000 -v $PWD:/app -v /app/node_modules wendyclima
+- docker stop wendyclima
 - docker ps -a
-- docker run -rm wendyclima npm test
+- docker run --rm wendyclima npm test
 
 script:
   - npm test
