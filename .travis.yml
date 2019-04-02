@@ -8,10 +8,10 @@ services:
   - docker
 
 before_install:
-- docker build -t wendy/test_node .
-- docker run -d -p 127.0.0.1:80:4567 wendy/test_node /bin/sh -c "cd /root/sinatra; npm run dev;"
+- docker build --rm -t wendyclima .
+- docker run --rm -it -p 3000:3000 -v $PWD:/app -v /app/node_modules wendyclima"
 - docker ps -a
-- docker run wendy/test_node /bin/sh -c "cd /app; npm test"
+- docker run -rm wendyclima npm test"
 
 script:
   - npm test
