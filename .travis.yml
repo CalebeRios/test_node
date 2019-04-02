@@ -8,14 +8,8 @@ cache:
   directories:
     - node_modules
 
-services:
-  - docker
-
-before_script:
-  - sudo docker build -t wendy/node .
-  - sudo docker build --rm -t wendyclima .
-  - sudo docker ps -a
-  - sudo docker run --rm -it -p 3000:3000 -v $PWD:/app -v /app/node_modules wendyclima
+before_install:
+  - npm install
 
 script:
   - npm test
