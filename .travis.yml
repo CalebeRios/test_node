@@ -12,4 +12,7 @@ services:
 before_install:
 - docker build --rm -t wendyclima .
 - docker ps -a
-- docker run --rm wendyclima npm test
+- docker run --rm wendyclima /bin/sh -c "cd /app; npm test"
+
+script:
+  - npm test
