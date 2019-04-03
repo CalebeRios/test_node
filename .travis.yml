@@ -18,6 +18,8 @@ before_install:
 
 script:
   - npm test
+  - npm test -- --coverage
+  - CI=false npm run build
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
