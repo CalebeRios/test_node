@@ -16,7 +16,7 @@ Após o build, rode esse outro comando:
 
 ```$ docker run --rm -it -p 3000:3000 -v $PWD:/app -v /app/node_modules wendyclima```
 
-Para rodar o eslint, rode esse cossssmando:
+Para rodar o eslint, rode esse cosssssssmando:
 
 ```$ docker run --rm -it -p 3000:3000 -v $PWD:/app -v /app/node_modules wendyclima /bin/sh -c "cd /app; npm run lint"```
 
